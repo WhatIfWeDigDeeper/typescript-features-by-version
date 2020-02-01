@@ -1,5 +1,4 @@
-*.js
-*.js.map
+dist
 tsconfig.tsbuildinfo
 
 # Logs

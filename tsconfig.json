@@ -1,26 +1,25 @@
 {
-    "compilerOptions": {
-      "incremental": true,
-      "sourceMap": true,
-      "pretty": true,
-      "target": "es2017",
-      "paths": {
-      },
-      "module": "commonjs",
-      "lib": ["es7", "esnext.asynciterable", "dom"],
-      "outDir": ".",
-      "rootDir": ".",
-      "strict": true,
-      "baseUrl": ".",
-      "allowJs": true,
-      "experimentalDecorators": true,
-      "emitDecoratorMetadata": true,
-      "allowSyntheticDefaultImports": true,
-      "noUnusedLocals": true,
-      "noUnusedParameters": true,
-      "strictPropertyInitialization": false,
-      "typeRoots": ["types", "node_modules/@types"]
-    },
-    "include": ["types/**/*.d.ts", "src/**/*.ts"],
-    "exclude": ["node_modules"]
-  }
+  "compilerOptions": {
+    "incremental": true,
+    "sourceMap": true,
+    "pretty": true,
+    "target": "es2017",
+    "paths": {},
+    "module": "commonjs",
+    "lib": ["es7", "esnext.asynciterable", "dom"],
+    "outDir": "dist",
+    "rootDir": ".",
+    "strict": true,
+    "baseUrl": ".",
+    "allowJs": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "allowSyntheticDefaultImports": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictPropertyInitialization": false,
+    "typeRoots": ["types", "node_modules/@types"]
+  },
+  "include": ["types/**/*.d.ts", "src/**/*.ts"],
+  "exclude": ["node_modules"]
+}
