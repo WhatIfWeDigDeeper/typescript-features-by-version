@@ -3,15 +3,15 @@
     "incremental": true,
     "sourceMap": true,
     "pretty": true,
-    "target": "es2017",
+    "target": "es2020",
     "paths": {},
-    "module": "commonjs",
-    "lib": ["es7", "esnext.asynciterable", "dom"],
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "lib": ["ESNext"],
     "outDir": "dist",
     "rootDir": ".",
     "strict": true,
     "baseUrl": ".",
-    "allowJs": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "allowSyntheticDefaultImports": true,
@@ -20,6 +20,6 @@
     "strictPropertyInitialization": false,
     "typeRoots": ["types", "node_modules/@types"]
   },
-  "include": ["types/**/*.d.ts", "src/**/*.ts"],
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
 }

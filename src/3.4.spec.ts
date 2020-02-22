@@ -16,10 +16,7 @@ describe('3.4', () => {
             return { value };
         }
 
-        const makeBoxedArray: <T>(arg: T) => Box<T[]> = compose(
-            makeArray,
-            makeBox
-        );
+        const makeBoxedArray: <T>(arg: T) => Box<T[]> = compose(makeArray, makeBox);
 
         it('should propagate the type through the generic functions', () => {
             const boxWithArray = makeBoxedArray('hello!');
@@ -90,7 +87,10 @@ describe('3.4', () => {
         type Shape = { kind: 'circle'; radius: number } | { kind: 'square'; sideLength: number };
 
         function getShapes(): readonly Shape[] {
-            const result = [{ kind: 'circle', radius: 100 }, { kind: 'square', sideLength: 50 }] as const;
+            const result = [
+                { kind: 'circle', radius: 100 },
+                { kind: 'square', sideLength: 50 },
+            ] as const;
 
             // before there would be "some terrible error message because TypeScript inferred
             // 'kind' to have the type 'string' instead of

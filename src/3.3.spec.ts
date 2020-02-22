@@ -26,7 +26,7 @@ describe('Improved behavior calling union types', () => {
             applyFn = consumeColor;
             const colorValue = applyFn('orange');
             expect(colorValue).toBe('orange');
-            //f('orange'); // It works! Returns a 'number | string'.
+            // f('orange'); // It works! Returns a 'number | string'.
             // only when intersect
             // f("apple");  // error - Argument of type '"apple"' is not assignable to parameter of type '"orange"'.
 

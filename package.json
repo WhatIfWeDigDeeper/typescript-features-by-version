@@ -18,11 +18,11 @@
   "homepage": "https://github.com/WhatIfWeDigDeeper/typescript-features-by-version#readme",
   "devDependencies": {
     "@types/jest": "^24.9.1",
-    "@typescript-eslint/eslint-plugin": "^2.18.0",
-    "@typescript-eslint/experimental-utils": "^2.18.0",
-    "@typescript-eslint/parser": "^2.18.0",
+    "@typescript-eslint/eslint-plugin": "^2.20.0",
+    "@typescript-eslint/experimental-utils": "^2.20.0",
+    "@typescript-eslint/parser": "^2.20.0",
     "eslint": "^6.8.0",
-    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsdoc": "^18.11.0",
     "eslint-plugin-no-null": "^1.0.2",
     "jest": "^24.9.0",
@@ -32,13 +32,13 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-microsoft-contrib": "^6.2.0",
     "tslint-plugin-prettier": "^2.1.0",
-    "typescript": "^3.7.5"
+    "typescript": "^3.8.2"
   },
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
     "compile": "tsc",
     "compile:watch": "tsc --watch --project tsconfig.json",
-    "tslint": "node --max-old-space-size=4096 node_modules/tslint/bin/tslint --project tsconfig.json -c tslint.json 'src/**/*.ts' --fix"
+    "lint": "node --max-old-space-size=4096 node_modules/tslint/bin/tslint --project tsconfig.json -c tslint.json 'src/**/*.ts' --fix"
   }
 }
