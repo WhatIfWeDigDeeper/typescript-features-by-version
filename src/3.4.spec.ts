@@ -84,6 +84,8 @@ describe('3.4', () => {
         });
     });
     describe('const assertions', () => {
+        // see https://blog.logrocket.com/const-assertions-are-the-killer-new-typescript-feature-b73451f35802/
+
         type Shape = { kind: 'circle'; radius: number } | { kind: 'square'; sideLength: number };
 
         function getShapes(): readonly Shape[] {
@@ -121,6 +123,37 @@ describe('3.4', () => {
             // ...works!
             foo.contents.push(5);
             expect(foo.contents.length).toEqual(5);
+        });
+        it('const props does make fully immutable', () => {
+            const arr = [1, 2, 3, 4] as const;
+            const foo = {
+                name: 'foo',
+                contents: arr,
+            } as const;
+
+            // error!
+            // foo.name = 'bar';
+            // error!
+            // foo.contents = [];
+            // error!
+            // foo.contents.push(5);
+            expect(foo.contents.length).toEqual(4);
+        });
+    });
+    describe('typeof array as const', (): void => {
+        // https://dev.to/andreasbergqvist/typescript-get-types-from-data-using-typeof-4b9c
+        it('should convert array as const to type', (): void => {
+            const dataAry = ['Text 1', 'Text 2'] as const;
+
+            type Data = typeof dataAry[number];
+
+            const fn = (data: Data): void => {
+                expect(data === 'Text 1' || data === 'Text 2').toBe(true);
+            };
+            fn('Text 2');
+
+            const found: Data | undefined = dataAry.find((x: Data): boolean => x === 'Text 1');
+            expect(found).toBe('Text 1');
         });
     });
 });
