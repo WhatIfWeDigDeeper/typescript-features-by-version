@@ -13,7 +13,7 @@
                 "--env",
                 "node",
                 "--config",
-                "${workspaceRoot}/jest.config.json"
+                "${workspaceRoot}/jest.config.js"
             ],
             "cwd": "${workspaceFolder}",
             "console": "integratedTerminal",
@@ -29,10 +29,8 @@
             "args": [
               "${relativeFile}",
               "--runInBand",
-              "--env",
-              "node",
               "--config",
-              "${workspaceRoot}/jest.config.json"
+              "${workspaceRoot}/jest.config.js"
             ],
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",

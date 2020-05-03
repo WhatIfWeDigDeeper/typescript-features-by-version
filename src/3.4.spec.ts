@@ -1,7 +1,7 @@
 describe('3.4', () => {
     describe('Higher order type inference from generic functions', () => {
         function compose<A, B, C>(f: (arg: A) => B, g: (arg: B) => C): (arg: A) => C {
-            return x => g(f(x));
+            return (x: A): C => g(f(x));
         }
 
         interface Box<T> {
@@ -45,7 +45,10 @@ describe('3.4', () => {
             expect(readonlyTuple[1]).not.toEqual(timePeriod);
         });
         it('should allow mutations on an object in a readonly tuple', () => {
-            const readonlyTuple: readonly [number, { timePeriod: string }] = [365, { timePeriod: 'days' }];
+            const readonlyTuple: readonly [number, { timePeriod: string }] = [
+                365,
+                { timePeriod: 'days' },
+            ];
             // compiler disallows mutation
             // readonlyTuple[0] = 366;
 

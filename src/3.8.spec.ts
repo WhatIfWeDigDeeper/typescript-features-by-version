@@ -9,14 +9,13 @@ describe('3.8', () => {
         it('should import type (see import type)', () => {
             const person: Person = {
                 firstName: 'Jeremy',
-                lastName: 'Bearimy'
+                lastName: 'Bearimy',
             };
 
             expect(fullName(person)).toEqual('Jeremy Bearimy');
         });
     });
     describe('ECMA Script private fields', () => {
-
         /**
          * Rules
          * 1. Private fields start with a # character. Sometimes we call these private names.
@@ -28,7 +27,7 @@ describe('3.8', () => {
         class C {
             #foo = 10;
 
-            cHelper() {
+            public cHelper(): number {
                 return this.#foo;
             }
         }
@@ -36,7 +35,7 @@ describe('3.8', () => {
         class D extends C {
             #foo = 20;
 
-            dHelper() {
+            public dHelper(): number {
                 return this.#foo;
             }
         }
@@ -46,9 +45,7 @@ describe('3.8', () => {
             expect(instance.dHelper()).toEqual(20);
         });
     });
-
 });
-
 
 /*
 Other features

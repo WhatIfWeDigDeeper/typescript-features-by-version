@@ -37,11 +37,11 @@ describe('Improved behavior calling union types', () => {
     describe('forEach', () => {
         interface Dog {
             kind: 'dog';
-            dogProp: any;
+            dogProp: string;
         }
         interface Cat {
             kind: 'cat';
-            catProp: any;
+            catProp: string;
         }
 
         const checkAnimal = (catOrDogArray: Dog[] | Cat[]): void => {

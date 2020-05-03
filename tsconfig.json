@@ -7,7 +7,7 @@
     "paths": {},
     "module": "CommonJS",
     "moduleResolution": "node",
-    "lib": ["ESNext"],
+    "lib": ["ESNext", "DOM"],
     "outDir": "dist",
     "rootDir": ".",
     "strict": true,
