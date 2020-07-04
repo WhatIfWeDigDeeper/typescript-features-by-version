@@ -23,6 +23,11 @@ describe('3.7', () => {
             const first = tryGetFirstElement(numbers);
             expect(first).toBeUndefined();
         });
+        it('should return undefined for empty array', () => {
+            const numbers: number[] | undefined = [];
+            const first = tryGetFirstElement(numbers);
+            expect(first).toBeUndefined();
+        });
     });
     describe('Nullish Coalescing', () => {
         it('should show problem with 0 treated as falsy with standard || check', () => {

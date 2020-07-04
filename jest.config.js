@@ -4,27 +4,16 @@
 module.exports = {
   moduleFileExtensions: [
     "js",
-    "ts",
     "json"
   ],
   moduleDirectories: [
     "node_modules"
   ],
-  transform: {
-    "^.+\\.(ts)$": "ts-jest"
-  },
-  globals: {
-    "ts-jest": {
-      tsConfig: "tsconfig.json",
-      diagnostics: false,
-      isolatedModules: true
-    }
-  },
-  rootDir: ".",
+  rootDir: "dist",
   roots: [
     "src"
   ],
-  testRegex: "src/.*\\.spec\\.ts$",
+  testRegex: "src/.*\\.spec\\.js$",
   testEnvironment: "node",
   coverageDirectory: "coverage",
 };
