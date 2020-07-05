@@ -20,7 +20,7 @@ describe('3.2', () => {
             return { ...obj, tag };
         }
 
-        it('should create produce an intersection type', (): void => {
+        it('should create an intersection type', (): void => {
             const intersectionObj: { x: number; y: number } & { tag: 'point' } = taggedObject(
                 { x: 10, y: 20 },
                 'point'
