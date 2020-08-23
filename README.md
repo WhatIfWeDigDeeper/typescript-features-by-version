@@ -41,3 +41,8 @@ Test specs to demonstrate each major and minor feature of Typescript based on re
 
 - [test](src/3.2.spec.ts)
 - [release notes](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-2.html)
+
+## 3.1
+
+- [test](src/3.1.spec.ts)
+- [release notes](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-1.html)
