@@ -7,9 +7,20 @@ module.exports = {
   ...{
     moduleFileExtensions: [
       "js",
+      "ts",
       "json"
     ],
-    rootDir: "dist",
-    testRegex: "src/.*\\.spec\\.js$",
+    transform: {
+      "^.+\\.(ts)$": "ts-jest"
+    },
+    globals: {
+      "ts-jest": {
+        tsConfig: "tsconfig.json",
+        diagnostics: false,
+        isolatedModules: true
+      }
+    },
+    rootDir: ".",
+    testRegex: "src/.*\\.spec\\.ts$",
   }
 };
