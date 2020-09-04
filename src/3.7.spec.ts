@@ -5,7 +5,7 @@ describe('3.7', () => {
     }
     it('should return undefined for nested missing item', () => {
       const example: Foo = { fu: { bar: {} } };
-      expect(example?.fu?.bar?.baz).toBeUndefined();
+      expect(example.fu?.bar?.baz).toBeUndefined();
     });
     it('should return value for nested item', () => {
       const example: Foo = { fu: { bar: { baz: 100 } } };

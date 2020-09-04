@@ -2,7 +2,12 @@
 
 Test specs to demonstrate each major and minor feature of Typescript based on release notes from the Typescript team.
 
-## 3.9
+## 4.0
+
+- [test](src/4.0.spec.ts)
+- [release notes](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-0.html)
+
+- ## 3.9
 
 - [test](src/3.9.spec.ts)
 - [release notes](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-9.html)
