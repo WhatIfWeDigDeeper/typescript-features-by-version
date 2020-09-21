@@ -13,6 +13,7 @@ describe('3.0', (): void => {
     });
   });
   describe('Generic rest parameters', (): void => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     function bind<T, U extends any[], V>(f: (x: T, ...args: U) => V, x: T): (...args: U) => V {
       return (...args) => f(x, ...args);
     }
@@ -51,6 +52,7 @@ describe('3.0', (): void => {
     });
   });
   describe('Rest elements in tuple types', (): void => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     function tuple<T extends any[]>(...args: T): T {
       return args;
     }
