@@ -15,7 +15,7 @@ describe('3.0', (): void => {
   describe('Generic rest parameters', (): void => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     function bind<T, U extends any[], V>(f: (x: T, ...args: U) => V, x: T): (...args: U) => V {
-      return (...args) => f(x, ...args);
+      return (...args): V => f(x, ...args);
     }
 
     function f3(x: number, y: string, z: boolean): { x: number; y: string; z: boolean } {
