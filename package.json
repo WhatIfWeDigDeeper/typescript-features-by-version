@@ -40,7 +40,7 @@
     }
   },
   "scripts": {
-    "audit:ci": "npx audit-ci --high",
+    "audit:ci": "npm_config_yes=true npx audit-ci --config .auditconfig.json",
     "clean": "rm -rf dist/*",
     "compile": "tsc --pretty",
     "compile:watch": "tsc --pretty --watch",
