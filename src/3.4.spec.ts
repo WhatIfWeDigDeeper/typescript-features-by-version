@@ -1,6 +1,9 @@
 describe('3.4', () => {
   describe('Higher order type inference from generic functions', () => {
-    function compose<A, B, C>(f: (arg: A) => B, g: (arg: B) => C): (arg: A) => C {
+    function compose<A, B, C>(
+      f: (arg: A) => B,
+      g: (arg: B) => C
+    ): (arg: A) => C {
       return (x: A): C => g(f(x));
     }
 
@@ -81,7 +84,8 @@ describe('3.4', () => {
       // disallowed
       // readonlyNumberArray[0] = 2;
 
-      const writableArray: MutableNumbers = readonlyNumberArray as MutableNumbers;
+      const writableArray: MutableNumbers =
+        readonlyNumberArray as MutableNumbers;
       writableArray[0] = 1;
       expect(writableArray[0]).toEqual(readonlyNumberArray[0]);
     });
@@ -89,7 +93,9 @@ describe('3.4', () => {
   describe('const assertions', () => {
     // see https://blog.logrocket.com/const-assertions-are-the-killer-new-typescript-feature-b73451f35802/
 
-    type Shape = { kind: 'circle'; radius: number } | { kind: 'square'; sideLength: number };
+    type Shape =
+      | { kind: 'circle'; radius: number }
+      | { kind: 'square'; sideLength: number };
 
     function getShapes(): readonly Shape[] {
       const result = [
@@ -155,7 +161,9 @@ describe('3.4', () => {
       };
       fn('Text 2');
 
-      const found: Data | undefined = dataAry.find((x: Data): boolean => x === 'Text 1');
+      const found: Data | undefined = dataAry.find(
+        (x: Data): boolean => x === 'Text 1'
+      );
       expect(found).toBe('Text 1');
     });
   });

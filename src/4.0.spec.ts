@@ -19,7 +19,10 @@ describe('4.0', (): void => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     type Arr = readonly any[];
 
-    function concat<T extends Arr, U extends Arr>(arr1: T, arr2: U): [...T, ...U] {
+    function concat<T extends Arr, U extends Arr>(
+      arr1: T,
+      arr2: U
+    ): [...T, ...U] {
       return [...arr1, ...arr2];
     }
     it('rest elements can be placed anywhere in a tuple or array', (): void => {
@@ -38,7 +41,11 @@ describe('4.0', (): void => {
       return (...tailArgs: U): R => f(...headArgs, ...tailArgs);
     }
 
-    const foo = (x: string, y: number, z: boolean): { x: string; y: number; z: boolean } => ({
+    const foo = (
+      x: string,
+      y: number,
+      z: boolean
+    ): { x: string; y: number; z: boolean } => ({
       x,
       y,
       z,
@@ -70,7 +77,9 @@ describe('4.0', (): void => {
       expect(total).toBe(10);
     });
 
-    type Name = [first: string, last: string] | [first: string, middle: string, last: string];
+    type Name =
+      | [first: string, last: string]
+      | [first: string, middle: string, last: string];
     interface Person {
       name: Name;
       age: number;
