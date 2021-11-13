@@ -6,8 +6,8 @@ on:
 
 
 jobs:
-  verify-pr:
-    name: node-ci
+  build:
+    name: verify-pr
     runs-on: ubuntu-latest
 
     steps:
