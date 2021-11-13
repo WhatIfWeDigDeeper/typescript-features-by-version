@@ -1,18 +1,18 @@
 describe('3.7', () => {
   describe('Optional Chaining', () => {
-    interface Foo {
-      fu?: { bar?: { baz?: number } };
-    }
-    it('should return undefined for nested missing item', () => {
-      const example: Foo = { fu: { bar: {} } };
-      expect(example.fu?.bar?.baz).toBeUndefined();
-    });
-    it('should return value for nested item', () => {
-      const example: Foo = { fu: { bar: { baz: 100 } } };
-      expect(example?.fu?.bar?.baz).toBe(100);
-    });
+    // interface Foo {
+    //   fu?: { bar?: { baz?: number } };
+    // }
+    // it('should return undefined for nested missing item', () => {
+    //   const example: Foo = { fu: { bar: {} } };
+    //   expect(example.fu?.bar?.baz).toBeUndefined();
+    // });
+    // it('should return value for nested item', () => {
+    //   const example: Foo = { fu: { bar: { baz: 100 } } };
+    //   expect(example?.fu?.bar?.baz).toBe(100);
+    // });
 
-    const tryGetFirstElement = <T>(ary?: T[]): T | undefined => ary?.[0];
+    const tryGetFirstElement = <T>(ary?: T[]): T | undefined => ary ? ary[0] : undefined;
     it('should return the first element', () => {
       const numbers = [10, 9, 8];
       const first = tryGetFirstElement(numbers);
@@ -34,9 +34,9 @@ describe('3.7', () => {
       const sample = { volume: 0 };
       expect(sample.volume || 0.5).toBe(0.5);
     });
-    it('should avoid falsy check resulting in 0', () => {
-      const sample = { volume: 0 };
-      expect(sample.volume ?? 0.5).toBe(0);
-    });
+    // it('should avoid falsy check resulting in 0', () => {
+    //   const sample = { volume: 0 };
+    //   expect(sample.volume ?? 0.5).toBe(0);
+    // });
   });
 });

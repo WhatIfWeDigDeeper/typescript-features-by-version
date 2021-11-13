@@ -1,6 +1,10 @@
 # Typescript Features by Version
 
-Test specs to demonstrate each major and minor feature of Typescript based on release notes from the Typescript team. You may use debug launch configurations of
+Test specs to demonstrate each major and minor feature of Typescript based on release notes from the Typescript team.
+
+## Debug Launch Config
+
+You may use debug launch configurations to step through the code.
 
 - Jest Tests = debug all unit Tests
 - Jest Active Unit Test = debug the current test file
