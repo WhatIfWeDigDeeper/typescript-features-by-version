@@ -7,7 +7,7 @@
     "paths": {},
     "module": "ES2020",
     "moduleResolution": "node",
-    "lib": ["ES2020", "DOM"],
+    "lib": ["ES2020"],
     "baseUrl": ".",
     "outDir": "dist",
     "rootDir": ".",
