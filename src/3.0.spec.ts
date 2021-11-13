@@ -14,11 +14,18 @@ describe('3.0', (): void => {
   });
   describe('Generic rest parameters', (): void => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    function bind<T, U extends any[], V>(f: (x: T, ...args: U) => V, x: T): (...args: U) => V {
+    function bind<T, U extends any[], V>(
+      f: (x: T, ...args: U) => V,
+      x: T
+    ): (...args: U) => V {
       return (...args): V => f(x, ...args);
     }
 
-    function f3(x: number, y: string, z: boolean): { x: number; y: string; z: boolean } {
+    function f3(
+      x: number,
+      y: string,
+      z: boolean
+    ): { x: number; y: string; z: boolean } {
       return { x, y, z };
     }
 
@@ -27,13 +34,15 @@ describe('3.0', (): void => {
       const f1 = bind(f2, 'hello'); // (z: boolean) => void
       const f0 = bind(f1, true); // () => void
 
-      [f3(42, 'hello', true), f2('hello', true), f1(true), f0()].forEach((result) => {
-        expect(result).toEqual({
-          x: 42,
-          y: 'hello',
-          z: true,
-        });
-      });
+      [f3(42, 'hello', true), f2('hello', true), f1(true), f0()].forEach(
+        (result) => {
+          expect(result).toEqual({
+            x: 42,
+            y: 'hello',
+            z: true,
+          });
+        }
+      );
     });
   });
   describe('Optional elements in tuple types', (): void => {

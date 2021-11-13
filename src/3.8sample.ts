@@ -3,4 +3,5 @@ export interface Person {
   lastName: string;
 }
 
-export const fullName = (person: Person): string => `${person.firstName} ${person.lastName}`;
+export const fullName = (person: Person): string =>
+  `${person.firstName} ${person.lastName}`;
