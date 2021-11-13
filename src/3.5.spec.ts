@@ -62,7 +62,10 @@ describe('3.5 https://devblogs.microsoft.com/typescript/announcing-typescript-3-
       }
     }
 
-    function composeCtor<T, U, V>(F: new (x: T) => U, G: new (y: U) => V): (x: T) => V {
+    function composeCtor<T, U, V>(
+      F: new (x: T) => U,
+      G: new (y: U) => V
+    ): (x: T) => V {
       return (x: T): V => new G(new F(x));
     }
 

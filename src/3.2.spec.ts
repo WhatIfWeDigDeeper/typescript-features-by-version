@@ -21,10 +21,8 @@ describe('3.2', () => {
     }
 
     it('should create an intersection type', (): void => {
-      const intersectionObj: { x: number; y: number } & { tag: 'point' } = taggedObject(
-        { x: 10, y: 20 },
-        'point'
-      );
+      const intersectionObj: { x: number; y: number } & { tag: 'point' } =
+        taggedObject({ x: 10, y: 20 }, 'point');
       expect(intersectionObj.x).toBe(10);
       expect(intersectionObj.tag).toBe('point');
     });
@@ -38,11 +36,12 @@ describe('3.2', () => {
     }
 
     it('should merge non-generic spread expressions', (): void => {
-      const intersectionObj: { x: number; y: number } & { tag: 'point' } = taggedObject(
-        { x: 10, y: 20 },
-        'point'
-      );
-      const nonGenSpreadObj: { a: string; x: number } & { x: number; y: number } & {
+      const intersectionObj: { x: number; y: number } & { tag: 'point' } =
+        taggedObject({ x: 10, y: 20 }, 'point');
+      const nonGenSpreadObj: { a: string; x: number } & {
+        x: number;
+        y: number;
+      } & {
         tag: 'point';
       } & {
         b: string;
@@ -52,11 +51,12 @@ describe('3.2', () => {
     });
 
     it('should merge non-generic spread expressions', (): void => {
-      const intersectionObj: { x: number; y: number } & { tag: 'point' } = taggedObject(
-        { x: 10, y: 20 },
-        'point'
-      );
-      const nonGenSpreadObj: { a: string; x: number } & { x: number; y: number } & {
+      const intersectionObj: { x: number; y: number } & { tag: 'point' } =
+        taggedObject({ x: 10, y: 20 }, 'point');
+      const nonGenSpreadObj: { a: string; x: number } & {
+        x: number;
+        y: number;
+      } & {
         tag: 'point';
       } & {
         b: string;
@@ -73,7 +73,8 @@ describe('3.2', () => {
       const x: { a: string; b: number } = { a: 'hi', b: 19 };
       const y: { b: string; c: boolean } = { b: 'world ', c: true };
       const s1: { a: string; b: string; c: boolean } = { ...x, ...y };
-      const s2: { a: string; b: number } & { b: string; c: boolean } = genericSpread(x, y);
+      const s2: { a: string; b: number } & { b: string; c: boolean } =
+        genericSpread(x, y);
       const b1: string = s1.b;
       const b2: number & string = s2.b;
       expect(b1).toEqual('world ');
@@ -93,7 +94,11 @@ describe('3.2', () => {
         greet: (name: string): string => 'Hi, ' + name,
       };
       const y: { b: string; c: boolean } = { b: 'world ', c: true };
-      const genSpread: { a: string; b: number; greet: (name: string) => string } & {
+      const genSpread: {
+        a: string;
+        b: number;
+        greet: (name: string) => string;
+      } & {
         b: string;
         c: boolean;
       } = genericSpread(x, y);
@@ -103,7 +108,9 @@ describe('3.2', () => {
   });
   describe('Generic object rest variables and parameters', (): void => {
     // https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-2.html#generic-object-rest-variables-and-parameters
-    function excludeTag<T extends { tag: string }>(obj: T): Pick<T, Exclude<keyof T, 'tag'>> {
+    function excludeTag<T extends { tag: string }>(
+      obj: T
+    ): Pick<T, Exclude<keyof T, 'tag'>> {
       const { tag, ...rest } = obj;
       console.log(tag);
       return rest; // Pick<T, Exclude<keyof T, "tag">>
