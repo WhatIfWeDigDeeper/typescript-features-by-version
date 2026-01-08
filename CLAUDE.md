@@ -8,6 +8,12 @@ This is a TypeScript features demonstration repository that contains test specs 
 
 ## Development Commands
 
+### Dependency Management
+- **IMPORTANT**: Always use `npm ci` for clean installs (never `rm -rf node_modules && npm install`)
+- `npm ci` - Clean install dependencies (preferred method)
+- `npm install` - Install/update dependencies
+- `npm install <package>` - Add new dependency
+
 ### Testing
 - `npm test` - Run all tests
 - `npm run test:watch` - Run tests in watch mode
@@ -49,12 +55,15 @@ The project uses strict TypeScript settings ([tsconfig.json](tsconfig.json)):
 - Experimental decorators enabled
 - Output directory: `dist/`
 
-## ESLint Rules
+## ESLint Configuration
 
-Notable ESLint rules ([.eslintrc](.eslintrc)):
-- `@typescript-eslint/explicit-function-return-type`: warn (tests should have explicit return types)
-- `@typescript-eslint/no-explicit-any`: warn (avoid `any` but allowed when necessary for demos)
-- `@typescript-eslint/no-unused-vars`: error
+This project uses ESLint 9 with flat config format ([eslint.config.js](eslint.config.js)):
+- ES module based configuration
+- TypeScript ESLint integration via `typescript-eslint` package
+- Notable rules:
+  - `@typescript-eslint/explicit-function-return-type`: warn (tests should have explicit return types)
+  - `@typescript-eslint/no-explicit-any`: warn (avoid `any` but allowed when necessary for demos)
+  - `@typescript-eslint/no-unused-vars`: error
 - Prettier integration for formatting consistency
 
 ## Testing Framework
