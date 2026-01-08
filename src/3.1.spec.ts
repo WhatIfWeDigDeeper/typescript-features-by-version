@@ -8,9 +8,11 @@ describe('3.1', (): void => {
 
     it('when type T is a tuple, only numeric properties are converted', (): void => {
       const point: Coordinate = [10, 20];
-      // tslint:disable-next-line no-console
-      console.log(`what's the ${point}`);
-      // const promPoint =
+
+      const interpolatedWithTuple = `what's the ${point}`;
+
+      expect(interpolatedWithTuple).toBe("what's the 10,20");
+
     });
   });
   describe('property declarations on functions', (): void => {

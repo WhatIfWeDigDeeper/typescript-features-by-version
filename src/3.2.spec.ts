@@ -112,7 +112,7 @@ describe('3.2', () => {
       obj: T
     ): Pick<T, Exclude<keyof T, 'tag'>> {
       const { tag, ...rest } = obj;
-      console.log(tag);
+      void tag;
       return rest; // Pick<T, Exclude<keyof T, "tag">>
     }
 
