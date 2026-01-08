@@ -1,11 +1,8 @@
 // For a detailed explanation regarding each configuration property, visit:
 // https://jestjs.io/docs/en/configuration.html
 
-module.exports = {
+export default {
   coverageDirectory: 'coverage',
-  globals: {
-    "ts-jest.tsconfig": "tsconfig.json"
-  },
   moduleDirectories: ['node_modules'],
   moduleFileExtensions: ['js', 'ts', 'json'],
   rootDir: '.',
@@ -13,6 +10,8 @@ module.exports = {
   testEnvironment: 'node',
   testRegex: 'src/.*\\.spec\\.ts$',
   transform: {
-    '^.+\\.(ts)$': 'ts-jest',
+    '^.+\\.(ts)$': ['ts-jest', {
+      tsconfig: 'tsconfig.json'
+    }],
   },
 };
