@@ -12,6 +12,7 @@
     "outDir": "dist",
     "rootDir": ".",
     "removeComments": true,
+    "skipLibCheck": true,
     // code quality
     "strict": true,
     "noUnusedLocals": true,

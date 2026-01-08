@@ -139,8 +139,9 @@ describe('4.0', (): void => {
         throw 'something';
       } catch (e: unknown) {
         // @ts-expect-error Can't access values on unknowns
-        console.log(e.toUpperCase());
+        const expectCompileError = e.toUpperCase();
         // Object is of type 'unknown'.
+        expect(expectCompileError).toBe('SOMETHING');
 
         if (typeof e === 'string') {
           // We've narrowed 'e' down to the type 'string'.

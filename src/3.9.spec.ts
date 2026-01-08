@@ -2,11 +2,15 @@ describe('3.9', (): void => {
   describe('@ts-expect-error', (): void => {
     it('should expect error', (): void => {
       // @ts-expect-error number & string
-      console.log(47 * 'octopus');
+      const expectedError = 47 * 'octopus';
+
+      expect(expectedError).toBeNaN();
     });
     it('will fail if expect error and does not error', (): void => {
-      // @ts -expect-error note had to insert space so continue to build
-      console.log(1 + 1);
+      // @ts -expect-error NOTE had to insert space so continue to build
+      const nonError = 1 + 1;
+
+      expect(nonError).toEqual(2);
     });
   });
 
