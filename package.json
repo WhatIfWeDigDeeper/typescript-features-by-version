@@ -42,17 +42,17 @@
     }
   },
   "scripts": {
-    "audit:ci": "npm_config_yes=true npx audit-ci --config .auditconfig.json",
+    "audit.ci": "npm_config_yes=true npx audit-ci --config .auditconfig.json",
     "clean": "rm -rf dist/*",
     "compile": "tsc --pretty",
-    "compile:watch": "tsc --pretty --watch",
+    "compile.watch": "tsc --pretty --watch",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "lint:watch": "eslint --watch",
+    "lint.fix": "eslint . --fix",
+    "lint.watch": "eslint --watch",
     "precommit": "lint-staged",
     "prepush": "npm run compile && npm test",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test.watch": "jest --watch"
   }
 }
