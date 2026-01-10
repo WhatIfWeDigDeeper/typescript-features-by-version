@@ -9,9 +9,12 @@ export default {
   roots: ['src'],
   testEnvironment: 'node',
   testRegex: 'src/.*\\.spec\\.ts$',
+  moduleNameMapper: {
+    '^(.*)\\.js$': '$1'
+  },
   transform: {
     '^.+\\.(ts)$': ['ts-jest', {
-      tsconfig: 'tsconfig.json'
+      tsconfig: 'tsconfig.jest.json'
     }],
   },
 };

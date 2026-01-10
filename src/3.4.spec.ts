@@ -24,7 +24,7 @@ describe('3.4', () => {
     it('should propagate the type through the generic functions', () => {
       const boxWithArray = makeBoxedArray('hello!');
       const ary = boxWithArray.value;
-      expect(ary[0].toUpperCase()).toEqual('HELLO!');
+      expect(ary[0]!.toUpperCase()).toEqual('HELLO!');
     });
   });
   describe('new readonly syntax for arrays and tuples', () => {
