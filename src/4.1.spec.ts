@@ -9,13 +9,14 @@ describe('4.1', (): void => {
     //   | "top-left"    | "top-center"    | "top-right"
     //   | "middle-left" | "middle-center" | "middle-right"
     //   | "bottom-left" | "bottom-center" | "bottom-right"
-    const setAlignment = (_value: `${VerticalAlignment}-${HorizontalAlignment}`): void => {
+    const setAlignment = (value: `${VerticalAlignment}-${HorizontalAlignment}`): void => {
       // No-op function to demonstrate template literal types
+      void value;
     };
 
     it('should support template literal types', async (): Promise<void> => {
       setAlignment("top-left");   // works!
-      // @ts-expect-error
+      // @ts-expect-error spelling mistake is caught
       setAlignment("top-middel"); // error!
       // Placeholder for template literal types demonstration
       expect(true).toBe(true);
@@ -25,12 +26,14 @@ describe('4.1', (): void => {
       type EnthusiasticGreeting<T extends string> = `${Uppercase<T>}`
       type HELLO = EnthusiasticGreeting<"hello">;
 
-      // @ts-expect-error
+      // @ts-expect-error does not match UPPERCASE of HELLO type
       const invalidGreeting: HELLO = "hello"; // should error
 
       const validGreeting: HELLO = "HELLO";
 
       expect(validGreeting).toBe("HELLO");
+      // to avoid unused variable error.
+      expect(invalidGreeting).toBe("hello");
     });
   });
 
