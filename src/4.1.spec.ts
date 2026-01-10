@@ -34,4 +34,29 @@ describe('4.1', (): void => {
     });
   });
 
+  describe('Key Remapping in Mapped Types with "as"', (): void => {
+    it('new syntax "as" clause in mapped types easily create prop names from existing', () => {
+      type Getters<T> = {
+        [K in keyof T as `get${Capitalize<string & K>}`]: () => T[K]
+      };
+
+      interface Person {
+        name: string;
+        age: number;
+        location: string;
+      }
+
+      type LazyPerson = Getters<Person>;
+
+      const lazyPerson: LazyPerson = {
+        getName: () => "John Doe",
+        getAge: () => 30,
+        getLocation: () => "New York"
+      };
+
+      expect(lazyPerson.getName()).toBe("John Doe");
+      expect(lazyPerson.getAge()).toBe(30);
+      expect(lazyPerson.getLocation()).toBe("New York");
+    });
+  });
 });

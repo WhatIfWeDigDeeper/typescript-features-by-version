@@ -9,6 +9,11 @@ You may use debug launch configurations to step through the code.
 - Jest Tests = debug all unit Tests
 - Jest Active Unit Test = debug the current test file
 
+## 4.1
+
+- [test spec](src/4.1.spec.ts)
+- [release notes](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-1.html)
+
 ## 4.0
 
 - [test spec](src/4.0.spec.ts)
