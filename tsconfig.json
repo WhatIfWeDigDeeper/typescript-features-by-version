@@ -5,7 +5,6 @@
     "pretty": true,
     "target": "esnext",
     "paths": {},
-    // "module": "esnext",
     "moduleResolution": "Node",
     "lib": ["esnext"],
     "baseUrl": ".",
