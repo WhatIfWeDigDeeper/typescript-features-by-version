@@ -47,7 +47,7 @@ describe('3.5 https://devblogs.microsoft.com/typescript/announcing-typescript-3-
 
   describe('Higher order type inference from generic constructors', () => {
     class Box<T> {
-      public kind: 'box' = 'box';
+      public kind = 'box' as const;
       public value: T;
       constructor(value: T) {
         this.value = value;
@@ -55,7 +55,7 @@ describe('3.5 https://devblogs.microsoft.com/typescript/announcing-typescript-3-
     }
 
     class Bag<U> {
-      public kind: 'bag' = 'bag';
+      public kind = 'bag' as const;
       public value: U;
       constructor(value: U) {
         this.value = value;
