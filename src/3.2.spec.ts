@@ -168,7 +168,7 @@ describe('3.2', () => {
         error: err,
         data: null,
       };
-      expect(() => unwrap(errResult)).toThrowError('should throw');
+      expect(() => unwrap(errResult)).toThrow('should throw');
     });
   });
 });
