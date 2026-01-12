@@ -16,10 +16,8 @@
       "Write(production.config.*)",
       "Bash(chmod:*)",
       "Bash(chown:*)",
-      "Bash(cp:*)",
       "Bash(dd:*)",
       "Bash(fsck:*)",
-      "Bash(mv:*)",
       "Bash(rm:*)",
       "Bash(sudo:*)",
       "Bash(tar:*)"
