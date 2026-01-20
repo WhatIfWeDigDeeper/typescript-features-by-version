@@ -2,6 +2,8 @@
 
 Test specs to demonstrate each major and minor feature of Typescript based on release notes from the Typescript team.
 
+**NOTE**: This repo was started, I think, before the [Typescript Playground](https://www.typescriptlang.org/play/) was introduced, so now I would recommend viewing and playing with the code samples there.
+
 ## Debug Launch Config
 
 You may use debug launch configurations to step through the code.
