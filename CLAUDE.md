@@ -78,3 +78,10 @@ Jest with ts-jest transformer:
 VSCode launch configurations available ([.vscode/launch.json](.vscode/launch.json)):
 - "Jest Tests" - Debug all unit tests
 - "Jest Active Unit Test" - Debug the currently open test file
+
+## Adding TypeScript Version Features
+
+When adding missing features to a version spec file:
+1. Compare against the official TypeScript release notes for that version
+2. Focus on features that can be demonstrated in tests (skip compiler flags that only affect tsconfig, editor-only features, etc.)
+3. Each feature should have its own `describe` block with `it` tests showing usage and type errors via `@ts-expect-error`
